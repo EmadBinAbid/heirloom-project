@@ -76,7 +76,8 @@ void setup()
   
   // Initialising timers
   universalTimer = new Timer(3);
-  timer = new Timer(120);
+  //timer = new Timer(120);
+  timer = new Timer(60);
   
   // Initialising blocks arrays
   blocksArray = new ArrayList<ArrayList<Block>>();
@@ -144,13 +145,13 @@ void draw()
     text(totalScore, 50, height - 40);
     /* Displays game info ends */
     
-    // Checks the win condition
-    if(timer.getTime() < 0)
-    {
-      // Show picture of islamic art pattern as splash screen
-      isGameOver = true;
-      image(islamicPatternImage, 0, 0);
-    }
+    //// Checks the win condition
+    //if(timer.getTime() < 0)
+    //{
+    //  // Show picture of islamic art pattern as splash screen
+    //  isGameOver = true;
+    //  image(islamicPatternImage, 0, 0);
+    //}
     
     // Checks the game over condition
     int counter = 0;
@@ -304,19 +305,19 @@ void draw()
     {
       // Show picture of islamic art pattern as splash screen
       isGameOver = true;
-      //image(islamicPatternImage, 0, 0);
-      fill(0);
-      textSize(40);
+      image(islamicPatternImage, 0, 0);
+      //fill(0);
+      //textSize(40);
       
-      fill(255, 255, 50, 180);
-      rect(60, height/2 - 45, 405, 190);
-      fill(255, 0, 0);
+      //fill(255, 255, 50, 180);
+      //rect(60, height/2 - 45, 405, 190);
+      //fill(255, 0, 0);
       
-      text("Game Over", width/2 - 100, height/2);
-      text("Well Played", width/2 - 100, height/2 + 40);
-      textSize(40);
-      text("Points Scored: ", width/2 - 100, height/2 + 100);
-      text(totalScore, width/2, height/2 + 140);
+      //text("Game Over", width/2 - 100, height/2);
+      //text("Well Played", width/2 - 100, height/2 + 40);
+      //textSize(40);
+      //text("Points Scored: ", width/2 - 100, height/2 + 100);
+      //text(totalScore, width/2, height/2 + 140);
     }
     
     // Checks the game over condition
@@ -331,16 +332,16 @@ void draw()
     if(counter >= blocksArray.get(0).size())
     {
       isGameOver = true;
+      image(islamicPatternImage, 0, 0);
       fill(0);
       textSize(40);
       
-      fill(255, 255, 50, 180);
+      fill(255, 255, 255, 100);
       rect(60, height/2 - 45, 405, 190);
-      fill(255, 0, 0);
+      fill(255, 255, 255);
       
       text("Game Over", width/2 - 100, height/2);
-      text("You Lost!", width/2 - 100, height/2 + 40);
-      image(gameLoseImage, width/2 - 50, height/2 + 80);
+      text("You lost!", width/2 - 100, height/2 + 40);
       textSize(40);
       text("Points Scored: ", width/2 - 100, height/2 + 100);
       text(totalScore, width/2, height/2 + 140);
