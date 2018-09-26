@@ -76,8 +76,8 @@ void setup()
   
   // Initialising timers
   universalTimer = new Timer(3);
-  //timer = new Timer(120);
-  timer = new Timer(60);
+  timer = new Timer(150);
+  //timer = new Timer(60);
   
   // Initialising blocks arrays
   blocksArray = new ArrayList<ArrayList<Block>>();
@@ -122,15 +122,15 @@ void draw()
     
     /* Displays game info starts ... */
     //Timer
-    image(clockImage, width-50, height-95);
+    image(clockImage, width-350, height-95);
     timer.countDown();
-    fill(255, 0, 0);
+    fill(255, 255, 255);
     textSize(15);
-    text("Time Remaining", width - 165, height - 80);
+    text("Time Remaining", width - 305, height - 80);
     textSize(20);
-    text(timer.getTime(), width - 170, height - 55);
+    text(timer.getTime(), width - 320, height - 55);
     textSize(15);
-    text("sec", width - 75, height - 55);
+    text("sec", width - 225, height - 55);
     
     //Score
     image(scoreImage, 0, height-105);
@@ -138,7 +138,7 @@ void draw()
     {
       timer.countDown();
     }
-    fill(255, 0, 0);
+    fill(255, 255, 255);
     textSize(15);
     text("Points Scored", 40, height - 80);
     textSize(40);
@@ -306,18 +306,18 @@ void draw()
       // Show picture of islamic art pattern as splash screen
       isGameOver = true;
       image(islamicPatternImage, 0, 0);
-      //fill(0);
-      //textSize(40);
+      fill(0);
+      textSize(40);
       
-      //fill(255, 255, 50, 180);
-      //rect(60, height/2 - 45, 405, 190);
-      //fill(255, 0, 0);
+      fill(255, 255, 255, 100);
+      rect(60, height/2 - 45, 405, 190);
+      fill(255, 255, 255);
       
-      //text("Game Over", width/2 - 100, height/2);
-      //text("Well Played", width/2 - 100, height/2 + 40);
-      //textSize(40);
-      //text("Points Scored: ", width/2 - 100, height/2 + 100);
-      //text(totalScore, width/2, height/2 + 140);
+      text("Game Over", width/2 - 100, height/2);
+      text("Well Played", width/2 - 100, height/2 + 40);
+      textSize(40);
+      text("Points Scored: ", width/2 - 100, height/2 + 100);
+      text(totalScore, width/2, height/2 + 140);
     }
     
     // Checks the game over condition
